@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shalini Srivastava | AI Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .project-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="#" class="text-2xl font-semibold tracking-tight">Shalini Srivastava</a>
+      <div class="flex items-center gap-8 text-sm">
+        <a href="#projects" class="hover:text-white transition">Projects</a>
+        <a href="#skills" class="hover:text-white transition">Skills</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+        <a href="https://www.linkedin.com/in/shalini-srivastava-ai/" target="_blank" class="text-blue-400 hover:text-blue-300">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center pt-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h1 class="text-6xl md:text-7xl font-bold tracking-tighter">Shalini Srivastava</h1>
+        <p class="text-2xl md:text-3xl text-zinc-400">"The gap between AI hype and AI that ships? I close it"</p>
+        
+        <div class="flex gap-4">
+          <a href="#projects" class="px-8 py-4 bg-white text-zinc-950 font-medium rounded-2xl hover:bg-zinc-200 transition">View Projects</a>
+          <button onclick="openContactModal()" class="px-8 py-4 border border-zinc-700 hover:border-zinc-400 rounded-2xl transition">Let's Talk</button>
+        </div>
+      </div>
+      
+      <!-- Placeholder for your photo -->
+      <div class="flex justify-center">
+        <div id="photo-placeholder" class="w-80 h-80 bg-zinc-800 rounded-3xl border border-zinc-700 flex items-center justify-center text-zinc-500 text-center p-8">
+          <div>
+            <i class="fa-solid fa-user text-6xl mb-4"></i><br>
+            Add your photo here
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-24 border-t border-zinc-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-semibold mb-8">About Me</h2>
+      <div id="about-content" class="prose prose-invert text-lg text-zinc-400">
+        <!-- Paste your About text here later -->
+        <p class="italic">Add your About section here...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-24 bg-zinc-900 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-semibold mb-12">Skills & Expertise</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <div class="space-y-10">
+          <div>
+            <h3 class="text-xl font-medium mb-4">LLM & Agentic Systems <span class="text-emerald-400">70%</span></h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Prompt Engineering</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">RAG</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Agentic AI Systems</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">LangGraph</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Gemini API</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Multi-agent Orchestration</span>
+            </div>
+          </div>
+          <!-- Add more categories similarly -->
+        </div>
+
+        <div class="space-y-10">
+          <div>
+            <h3 class="text-xl font-medium mb-4">Vector & Search <span class="text-emerald-400">75%</span></h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Pinecone</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Elasticsearch</span>
+              <span class="px-4 py-2 bg-zinc-800 text-sm rounded-2xl">Semantic Search</span>
+            </div>
+          </div>
+          <!-- Add remaining categories here (Vector, Cloud, Data, Frameworks) -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-semibold mb-4">Featured Projects</h2>
+      <p class="text-zinc-400 mb-12">Building AI that actually ships to production</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- CloseForce Project Card -->
+        <div class="project-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+          <div class="h-48 bg-zinc-800 rounded-2xl mb-6 flex items-center justify-center">
+            <span class="text-zinc-500">Project Thumbnail (add image link)</span>
+          </div>
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-2xl font-semibold">CloseForce</h3>
+            <span class="px-4 py-1 bg-emerald-900 text-emerald-300 text-xs rounded-full">Agentic AI</span>
+          </div>
+          <p class="text-zinc-400 mb-6">Multi-agent system that turns raw sales call recordings into actionable deal intelligence, objection maps, and professional follow-up proposals automatically.</p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">LangGraph</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Gemini API</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Python</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Multi-Agent</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://github.com/Shalini-Srivastavaaa/ClosingForce" target="_blank" class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="#" id="loom-placeholder" target="_blank" class="flex-1 text-center py-4 bg-white text-zinc-950 rounded-2xl hover:bg-zinc-200 transition">Watch Loom Demo</a>
+          </div>
+        </div>
+
+        <!-- Duplicate the above div for new projects -->
+        <!-- <!-- DUPLICATE THIS CARD FOR NEW PROJECTS --> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact" class="py-20 border-t border-zinc-800">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-semibold mb-8">Let's Build Something Great Together</h2>
+      <button onclick="openContactModal()" class="px-10 py-5 bg-white text-zinc-950 font-medium rounded-3xl text-lg hover:bg-zinc-200 transition">Get In Touch</button>
+      <p class="mt-12 text-zinc-500">© 2026 Shalini Srivastava • Made with passion for shipping AI</p>
+    </div>
+  </footer>
+
+  <!-- Floating Let's Talk Button -->
+  <button onclick="openContactModal()" class="fixed bottom-8 right-8 bg-white text-zinc-950 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition text-2xl z-50">
+    <i class="fa-solid fa-comment-dots"></i>
+  </button>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-[100]">
+    <div class="bg-zinc-900 rounded-3xl p-10 max-w-md w-full mx-4">
+      <h3 class="text-2xl font-semibold mb-6">Let's Talk</h3>
+      <p class="text-zinc-400 mb-8">Share your email or phone and I'll get back to you soon.</p>
+      
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+        <input type="email" name="email" placeholder="your@email.com" required class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500">
+        <input type="tel" name="phone" placeholder="Phone number (optional)" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500">
+        <textarea name="message" placeholder="Tell me about your project or opportunity..." rows="4" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500"></textarea>
+        <button type="submit" class="w-full py-4 bg-white text-zinc-950 rounded-2xl font-medium">Send Message</button>
+      </form>
+
+      <div class="mt-8 text-center">
+        <p class="text-sm text-zinc-500 mb-3">Or schedule a call directly:</p>
+        <a href="https://calendly.com/YOUR_CALENDLY" target="_blank" class="inline-block text-blue-400 hover:text-blue-300">📅 Book a meeting on Calendly</a>
+      </div>
+
+      <button onclick="closeContactModal()" class="mt-8 text-zinc-400 hover:text-white">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openContactModal() {
+      document.getElementById('contactModal').classList.remove('hidden');
+    }
+    function closeContactModal() {
+      document.getElementById('contactModal').classList.add('hidden');
+    }
+
+    // Tailwind script already included
+  </script>
+</body>
+</html>
