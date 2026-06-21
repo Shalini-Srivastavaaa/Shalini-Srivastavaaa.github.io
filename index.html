@@ -268,41 +268,62 @@
     </div>
   </div>
   <script>
-    function openContactModal() {
-      document.getElementById('contactModal').classList.remove('hidden');
+    // Existing functions (openContactModal, closeContactModal, carousel functions) stay here
+  
+    // ==================== GALLERY MODAL ====================
+    let currentImageIndex = 0;
+    const galleryImages = [
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-1.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-2.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-3.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-4.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-5.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-6.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-7.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-8.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-9.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-10.png",
+      "https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-11.png"
+    ];
+  
+    function openGalleryModal() {
+      const modal = document.getElementById('galleryModal');
+      modal.classList.remove('hidden');
+      currentImageIndex = 0;
+      updateGalleryImage();
+      
+      // Keyboard support
+      document.addEventListener('keydown', handleGalleryKeydown);
     }
-    
-    function closeContactModal() {
-      document.getElementById('contactModal').classList.add('hidden');
+  
+    function closeGalleryModal() {
+      const modal = document.getElementById('galleryModal');
+      modal.classList.add('hidden');
+      document.removeEventListener('keydown', handleGalleryKeydown);
     }
-
-    // Carousel functions for project images
-    function prevSlide(project) {
-      const carousel = document.getElementById('carousel-' + project);
-      if (!carousel) return;
+  
+    function updateGalleryImage() {
+      const img = document.getElementById('gallery-image');
+      const counter = document.getElementById('gallery-counter');
       
-      carousel.style.transition = 'none';
-      carousel.style.transform = `translateX(100%)`;
-      
-      setTimeout(() => {
-        carousel.style.transition = 'transform 0.3s ease';
-        carousel.style.transform = `translateX(0%)`;
-        carousel.insertBefore(carousel.lastElementChild, carousel.firstElementChild);
-      }, 10);
+      img.src = galleryImages[currentImageIndex];
+      counter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
     }
-
-    function nextSlide(project) {
-      const carousel = document.getElementById('carousel-' + project);
-      if (!carousel) return;
-      
-      carousel.style.transition = 'transform 0.3s ease';
-      carousel.style.transform = `translateX(-100%)`;
-      
-      setTimeout(() => {
-        carousel.style.transition = 'none';
-        carousel.style.transform = `translateX(0%)`;
-        carousel.appendChild(carousel.firstElementChild);
-      }, 300);
+  
+    function nextGalleryImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      updateGalleryImage();
+    }
+  
+    function prevGalleryImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateGalleryImage();
+    }
+  
+    function handleGalleryKeydown(e) {
+      if (e.key === 'ArrowRight') nextGalleryImage();
+      if (e.key === 'ArrowLeft') prevGalleryImage();
+      if (e.key === 'Escape') closeGalleryModal();
     }
   </script>
 </body>
