@@ -147,27 +147,56 @@
       <p class="text-zinc-400 mb-12">Building AI that actually ships to production</p>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <!-- CloseForce Project Card -->
+        <!-- CloseForce Project Card with Carousel -->
         <div class="project-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-          <div class="h-48 bg-zinc-800 rounded-2xl mb-6 flex items-center justify-center">
-            <span class="text-zinc-500">Project Thumbnail (add image link)</span>
+          
+          <!-- Image Carousel -->
+          <div class="relative h-56 rounded-2xl overflow-hidden mb-6 border border-zinc-700 bg-zinc-800">
+            <div id="carousel-closeforce" class="flex transition-transform duration-300 h-56">
+              <!-- Add your project images here -->
+              <img src="https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-1.png" 
+                   class="w-full h-56 object-cover flex-shrink-0" alt="CloseForce Screenshot 1">
+              <img src="https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-2.png" 
+                   class="w-full h-56 object-cover flex-shrink-0" alt="CloseForce Screenshot 2">
+              <img src="https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/closeforce-3.png" 
+                   class="w-full h-56 object-cover flex-shrink-0" alt="CloseForce Screenshot 3">
+            </div>
+        
+            <!-- Left Arrow -->
+            <button onclick="prevSlide('closeforce')" 
+                    class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white w-9 h-9 rounded-full flex items-center justify-center text-lg transition">
+              ←
+            </button>
+            
+            <!-- Right Arrow -->
+            <button onclick="nextSlide('closeforce')" 
+                    class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black text-white w-9 h-9 rounded-full flex items-center justify-center text-lg transition">
+              →
+            </button>
           </div>
+        
+          <!-- Project Info -->
           <div class="flex justify-between items-start mb-4">
             <h3 class="text-2xl font-semibold">CloseForce</h3>
             <span class="px-4 py-1 bg-emerald-900 text-emerald-300 text-xs rounded-full">Agentic AI</span>
           </div>
+          
           <p class="text-zinc-400 mb-6">Multi-agent system that turns raw sales call recordings into actionable deal intelligence, objection maps, and professional follow-up proposals automatically.</p>
+          
           <div class="flex flex-wrap gap-2 mb-8">
             <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">LangGraph</span>
             <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Gemini API</span>
             <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Python</span>
             <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Multi-Agent</span>
           </div>
+        
           <div class="flex gap-3">
-            <a href="https://github.com/Shalini-Srivastavaaa/ClosingForce" target="_blank" class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+            <a href="https://github.com/Shalini-Srivastavaaa/ClosingForce" target="_blank" 
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
               <i class="fa-brands fa-github"></i> GitHub
             </a>
-            <a href="#" id="loom-placeholder" target="_blank" class="flex-1 text-center py-4 bg-white text-zinc-950 rounded-2xl hover:bg-zinc-200 transition">Watch Loom Demo</a>
+            <a href="#" id="loom-placeholder" target="_blank" 
+               class="flex-1 text-center py-4 bg-white text-zinc-950 rounded-2xl hover:bg-zinc-200 transition">Watch Loom Demo</a>
           </div>
         </div>
 
