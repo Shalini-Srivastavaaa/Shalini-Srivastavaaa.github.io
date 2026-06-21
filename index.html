@@ -217,17 +217,20 @@
       <p class="text-zinc-400 mb-8">Share your email or phone and I'll get back to you soon.</p>
       
       <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
-        <input type="email" name="email" placeholder="your@email.com" required class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500">
-        <input type="tel" name="phone" placeholder="Phone number (optional)" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500">
-        <textarea name="message" placeholder="Tell me about your project or opportunity..." rows="4" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500"></textarea>
+        <input type="email" name="email" placeholder="your@email.com" required 
+               class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500">
+        <input type="tel" name="phone" placeholder="Phone number (optional)" 
+               class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500">
+        <textarea name="message" placeholder="Tell me about your project or opportunity..." rows="4" 
+                  class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-2xl focus:outline-none focus:border-blue-500"></textarea>
         <button type="submit" class="w-full py-4 bg-white text-zinc-950 rounded-2xl font-medium">Send Message</button>
       </form>
-
+  
       <div class="mt-8 text-center">
         <p class="text-sm text-zinc-500 mb-3">Or schedule a call directly:</p>
         <a href="https://calendly.com/YOUR_CALENDLY" target="_blank" class="inline-block text-blue-400 hover:text-blue-300">📅 Book a meeting on Calendly</a>
       </div>
-
+  
       <button onclick="closeContactModal()" class="mt-8 text-zinc-400 hover:text-white">Close</button>
     </div>
   </div>
@@ -268,8 +271,14 @@
     </div>
   </div>
   <script>
-    // Existing functions (openContactModal, closeContactModal, carousel functions) stay here
-  
+
+    function openContactModal() {
+      document.getElementById('contactModal').classList.remove('hidden');
+    }
+    
+    function closeContactModal() {
+      document.getElementById('contactModal').classList.add('hidden');
+    }
     // ==================== GALLERY MODAL ====================
     let currentImageIndex = 0;
     const galleryImages = [
