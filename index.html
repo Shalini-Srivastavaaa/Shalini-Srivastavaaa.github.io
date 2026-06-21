@@ -246,11 +246,39 @@
     function openContactModal() {
       document.getElementById('contactModal').classList.remove('hidden');
     }
+    
     function closeContactModal() {
       document.getElementById('contactModal').classList.add('hidden');
     }
 
-    // Tailwind script already included
+    // Carousel functions for project images
+    function prevSlide(project) {
+      const carousel = document.getElementById('carousel-' + project);
+      if (!carousel) return;
+      
+      carousel.style.transition = 'none';
+      carousel.style.transform = `translateX(100%)`;
+      
+      setTimeout(() => {
+        carousel.style.transition = 'transform 0.3s ease';
+        carousel.style.transform = `translateX(0%)`;
+        carousel.insertBefore(carousel.lastElementChild, carousel.firstElementChild);
+      }, 10);
+    }
+
+    function nextSlide(project) {
+      const carousel = document.getElementById('carousel-' + project);
+      if (!carousel) return;
+      
+      carousel.style.transition = 'transform 0.3s ease';
+      carousel.style.transform = `translateX(-100%)`;
+      
+      setTimeout(() => {
+        carousel.style.transition = 'none';
+        carousel.style.transform = `translateX(0%)`;
+        carousel.appendChild(carousel.firstElementChild);
+      }, 300);
+    }
   </script>
 </body>
 </html>
