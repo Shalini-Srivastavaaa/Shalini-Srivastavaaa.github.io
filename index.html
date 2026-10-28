@@ -75,7 +75,7 @@
         <div class="grid grid-cols-2 gap-6 pt-4 border-t border-zinc-800">
           <div><p class="text-2xl font-semibold text-white">50K+</p><p class="text-sm text-zinc-500">users on a legal search &amp; RAG chatbot</p></div>
           <div><p class="text-2xl font-semibold text-white">20K+</p><p class="text-sm text-zinc-500">callers handled by a voice agent</p></div>
-          <div><p class="text-2xl font-semibold text-white">97%</p><p class="text-sm text-zinc-500">query accuracy on 127K court documents</p></div>
+          <div><p class="text-2xl font-semibold text-white">127K</p><p class="text-sm text-zinc-500">documents in a production search engine</p></div>
           <div><p class="text-2xl font-semibold text-white">3+</p><p class="text-sm text-zinc-500">years building production AI systems.</p></div>
         </div>
       </div>
@@ -105,13 +105,12 @@
         </p>
 
         <p>
-          I worked out what the business actually needed, designed the system, built it, and stayed on it until it ran.
+          Before I design anything, I aim to understand the problem well enough to explain it back to the people who deal with it every day, so I read their data, look at how the work gets done now, and keep asking until the pieces fit. What I build after that is usually simpler than the first idea, because it's aimed at the real problem.
         </p>
 
         <p>
-          I don't call anything accurate until I've tested it. That has meant 97% query accuracy on a 127,000-document legal search index, 95.3% retrieval accuracy on a support-ticket RAG pipeline measured against a 200-query eval set, and a voice agent built on retrieval so it doesn't pay to reprocess every document on every call.
+          You can hand me a loosely defined problem and expect a plan, a working first version and honest updates, without walking me through each step.
         </p>
-
         <p>
           Underneath the LLM work is a solid ML foundation: classical models, neural networks and training my own models. That's what lets me reason about why a system misbehaves instead of just restarting it.
         </p>
@@ -156,11 +155,12 @@
           <p class="text-zinc-300 mb-4">Search engine and RAG chatbot for a legal research platform used by 50K+ people.</p>
           <ul class="text-sm text-zinc-400 space-y-3 mb-6 list-disc pl-5">
             <li>Processed 127,000+ court PDFs (1950 to present) on AWS (S3, ECS, GPU instances) and extracted structured metadata from each.</li>
-            <li>Built the Elasticsearch index and connected it to a RAG chatbot that returns the relevant case files alongside each answer, with streaming responses and saved chat history.</li>
+            <li>Built the Elasticsearch search engine and a RAG chatbot that returns relevant case files with each answer, plus the React and TypeScript front end.</li>
+            <li>Evaluated retrieval with Precision@k, Recall@k and NDCG@10; monitored p95/p99 latency and tested in Docker before deploying to Vultr.</li>
           </ul>
-          <div class="mt-auto h-24 pt-4 border-t border-zinc-800">
-            <p class="text-2xl font-semibold text-white">97%</p>
-            <p class="text-sm text-zinc-500">query accuracy on the search index</p>
+          <div class="mt-auto h-24 pt-4 border-t border-zinc-800 grid grid-cols-2 gap-4">
+            <div><p class="text-2xl font-semibold text-white">50K+</p><p class="text-sm text-zinc-500">users</p></div>
+            <div><p class="text-2xl font-semibold text-white">127K+</p><p class="text-sm text-zinc-500">documents</p></div>
           </div>
         </div>
 
@@ -170,12 +170,13 @@
             <h3 class="text-2xl font-semibold">Hoarding Rescue</h3>
             <span class="px-3 py-1 bg-zinc-800 text-zinc-300 text-xs rounded-full whitespace-nowrap">Voice AI · US</span>
           </div>
-          <p class="text-zinc-300 mb-4">Inbound and outbound AI calling system for a US services company.</p>
+          <p class="text-zinc-300 mb-4">Inbound and outbound AI calling system with warm handoff to staff and a summary after every call.</p>
           <ul class="text-sm text-zinc-400 space-y-3 mb-6 list-disc pl-5">
-            <li>Books appointments, hands the caller to a person when needed, and writes a summary after every call.</li>
-            <li>Built on VAPI, Twilio and Make.com.</li>
+            <li>Built on Twilio with webhooks and tool calling; runs up to 20 calls at once.</li>
+            <li>Tested with scripted call scenarios before launch and regression-tested after every prompt or flow change.</li>
+            <li>Diagnosed and fixed dropped calls, failed webhooks, incorrect tool execution and slow responses in production.</li>
           </ul>
-          <!-- Call recording: upload the file to an "audio" folder in your repo with this exact name. Hidden until the file exists. -->
+          
           <div class="call-clip mb-6">
             <p class="text-xs uppercase tracking-wider text-zinc-500 mb-2"><i class="fa-solid fa-phone mr-1"></i> Listen to a real call</p>
             <audio controls preload="metadata" src="audio/hoarding-rescue-call.mp3" class="w-full h-10" style="color-scheme: dark"
@@ -195,36 +196,12 @@
           </div>
           <p class="text-zinc-300 mb-4">Search over the support team's past Zendesk tickets, so agents can find how similar issues were resolved.</p>
           <ul class="text-sm text-zinc-400 space-y-3 mb-6 list-disc pl-5">
-            <li>RAG pipeline with Cloud Vision OCR for image attachments, built with n8n, Pinecone and Streamlit.</li>
+            <li>RAG search with Cloud Vision OCR for image attachments, Pinecone retrieval and a Streamlit interface.</li>
             <li>Measured on a 200-query evaluation set before calling it done.</li>
           </ul>
           <div class="mt-auto h-24 pt-4 border-t border-zinc-800">
             <p class="text-2xl font-semibold text-white">95.3%</p>
-            <p class="text-sm text-zinc-500">retrieval accuracy on 200 test queries</p>
-          </div>
-        </div>
-
-
-        <!-- Green Marble Solutions -->
-        <div class="work-card snap-start shrink-0 w-[85%] sm:w-[60%] lg:w-[calc((100%-3rem)/3)] bg-zinc-950/60 border border-zinc-800 rounded-3xl p-6 sm:p-8 flex flex-col">
-          <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
-            <h3 class="text-2xl font-semibold">Green Marble Solutions</h3>
-            <span class="px-3 py-1 bg-zinc-800 text-zinc-300 text-xs rounded-full whitespace-nowrap">Voice AI · US</span>
-          </div>
-          <p class="text-zinc-300 mb-4">Outbound AI calling agent that calls leads for residential laundry-service clients.</p>
-          <ul class="text-sm text-zinc-400 space-y-3 mb-6 list-disc pl-5">
-            <li>Calls each lead, and emails the owner as soon as a prospect is interested.</li>
-            <li>Built on VAPI, Twilio and Make.com.</li>
-          </ul>
-          <!-- Call recording: upload the file to an "audio" folder in your repo with this exact name. Hidden until the file exists. -->
-          <div class="call-clip mb-6">
-            <p class="text-xs uppercase tracking-wider text-zinc-500 mb-2"><i class="fa-solid fa-phone mr-1"></i> Listen to a real call</p>
-            <audio controls preload="metadata" src="audio/green-marble-call.mp3" class="w-full h-10" style="color-scheme: dark"
-                   onerror="this.parentElement.style.display='none'"></audio>
-          </div>
-          <div class="mt-auto h-24 pt-4 border-t border-zinc-800">
-            <p class="text-2xl font-semibold text-white">~90%</p>
-            <p class="text-sm text-zinc-500">less manual outbound calling</p>
+            <p class="text-sm text-zinc-500">recall@5 on 200 labeled test queries</p>
           </div>
         </div>
 
@@ -239,7 +216,7 @@
   <section id="projects" class="py-24 border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl font-semibold mb-4">Featured Projects</h2>
-      <p class="text-zinc-400 mb-12">Things I build on my own time to go deeper on agents and reliability.</p>
+      <p class="text-zinc-400 mb-12">Things I build to go deeper on agents and reliability.</p>
 
       <div class="grid md:grid-cols-2 gap-8">
         <!-- ClosingForce Project Card -->
@@ -329,6 +306,7 @@
   </section>
 
   <!-- Skills -->
+  <!-- Skills -->
   <section id="skills" class="py-24 bg-zinc-900 border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl font-semibold mb-4">Skills</h2>
@@ -337,13 +315,16 @@
 
         <div class="bg-zinc-950/60 border border-zinc-800 rounded-3xl p-6">
           <h3 class="text-xl font-medium mb-2">LLMs &amp; Agents</h3>
-          <p class="text-sm text-zinc-500 mb-4">Multi-agent workflows that hand work between agents and call tools.</p>
+          <p class="text-sm text-zinc-500 mb-4">Multi-agent workflows that call tools, with guardrails around them.</p>
           <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">OpenAI API</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Gemini API</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Claude API</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LangGraph</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Multi-agent workflows</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Tool calling</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">OpenAI API</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Gemini API</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">MCP</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Guardrails</span>
           </div>
         </div>
 
@@ -352,10 +333,11 @@
           <p class="text-sm text-zinc-500 mb-4">RAG and search over 127,000+ legal documents and support-ticket histories.</p>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">RAG</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Vector search</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Hybrid search</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Embeddings</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Elasticsearch</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Pinecone</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Embeddings</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Hybrid search</span>
           </div>
         </div>
 
@@ -363,13 +345,34 @@
           <h3 class="text-xl font-medium mb-2">Voice AI</h3>
           <p class="text-sm text-zinc-500 mb-4">Real-time agents callers can interrupt, with actions taken mid-call.</p>
           <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">STT / TTS / VAD / turn detection</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LiveKit Agents</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Twilio Media Streams</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">OpenAI Realtime</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Gemini Live</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">STT / TTS / VAD</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Deepgram</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Twilio Voice &amp; Media Streams</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">WebRTC</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">WebSockets</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Deepgram</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">ElevenLabs</span>
+
+          </div>
+        </div>
+
+        <div class="bg-zinc-950/60 border border-zinc-800 rounded-3xl p-6">
+          <h3 class="text-xl font-medium mb-2">Evals &amp; Monitoring</h3>
+          <p class="text-sm text-zinc-500 mb-4">Measuring a system before calling it done, and watching it after launch.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">recall@k</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">NDCG</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">p95/p99 latency</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LLM-judge baselines</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Scripted call tests</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Prompt regression tests</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">A/B evals</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Langfuse</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LangSmith</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">promptfoo</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Ragas</span>
           </div>
         </div>
 
@@ -381,31 +384,28 @@
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">TensorFlow</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Transformers</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">CNNs</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Autoencoders</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">GANs</span>
           </div>
         </div>
 
         <div class="bg-zinc-950/60 border border-zinc-800 rounded-3xl p-6">
-          <h3 class="text-xl font-medium mb-2">Evaluation</h3>
-          <p class="text-sm text-zinc-500 mb-4">Measuring a system before calling it accurate.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Retrieval eval sets</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LLM-judge baselines</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Human preference &amp; A/B evals</span>
-          </div>
-        </div>
-
-        <div class="bg-zinc-950/60 border border-zinc-800 rounded-3xl p-6">
-          <h3 class="text-xl font-medium mb-2">Backend &amp; Cloud</h3>
-          <p class="text-sm text-zinc-500 mb-4">Shipping it: APIs, GPU pipelines and deployment.</p>
+          <h3 class="text-xl font-medium mb-2">Backend &amp; Deployment</h3>
+          <p class="text-sm text-zinc-500 mb-4">Shipping it: APIs, front ends, tests and deployment.</p>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Python</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">TypeScript</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">React</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">FastAPI</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Pydantic</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">pytest</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">SQL</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">AWS (S3, EC2, ECS, GPU)</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">PostgreSQL</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Docker</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">CI/CD</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">AWS</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">GCP</span>
-            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Streamlit</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Vultr</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">REST APIs</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Webhooks</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Git</span>
           </div>
         </div>
@@ -418,7 +418,7 @@
   <footer id="contact" class="py-20 border-t border-zinc-800">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-semibold mb-4">Hiring for an AI Engineer?</h2>
-      <p class="text-zinc-400 mb-6">I'm open to full-time remote roles and adjust my hours to overlap with US, EU and Gulf teams.</p>
+      <p class="text-zinc-400 mb-6">Based in India. Open to full-time remote roles and EOR employment, available immediately, and happy to adjust my hours to overlap wit US, EU or Gulf hours.</p>
       <p class="mb-10 flex flex-wrap items-center justify-center gap-3">
         <span class="text-lg text-white break-all">srivastavaparidhi007@gmail.com</span>
         <button onclick="copyEmail(this)" class="text-sm px-3 py-1.5 border border-zinc-700 hover:border-zinc-400 rounded-xl transition flex items-center gap-2" aria-label="Copy email address"><i class="fa-regular fa-copy"></i> <span>Copy</span></button>
