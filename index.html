@@ -240,7 +240,7 @@
             <span class="px-4 py-1 bg-amber-900 text-amber-300 text-xs rounded-full whitespace-nowrap">ML · Agent Reliability</span>
           </div>
 
-          <p class="text-zinc-400 mb-6">A ~150M ModernBERT classifier that sits between an LLM agent and its tools and flags likely-wrong tool calls before they execute: wrong arguments, stale values, ignored errors and policy violations (7-class taxonomy). Trained on real τ²-bench failures that I mined and hand-verified, plus induced errors. On a 363-row human-verified test set it scores 0.771 AUROC, matching a GPT-5-mini judge (0.719) at ~0.7 s on a laptop CPU with zero API cost. A 1.5B Qwen LoRA only tied it, which showed that labeled data, not model size, was the bottleneck.</p>
+          <p class="text-zinc-400 mb-6">A ~150M ModernBERT classifier that sits between an LLM agent and its tools and flags likely-wrong tool calls before they execute: wrong arguments, stale values, ignored errors and policy violations (7-class taxonomy). Trained on real τ²-bench failures that I mined and hand-verified, plus induced errors. On a 363-row human-verified test set it scores 0.771 AUROC, above a GPT-5-mini judge (0.719) at ~0.7 s on a laptop CPU with zero API cost. A 1.5B Qwen LoRA only tied it, which showed that labeled data, not model size, was the bottleneck.</p>
 
           <div class="flex flex-wrap gap-2 mb-6">
             <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">PyTorch</span>
