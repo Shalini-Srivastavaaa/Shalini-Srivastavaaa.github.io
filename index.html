@@ -219,8 +219,56 @@
       <p class="text-zinc-400 mb-12">Things I build to go deeper on agents and reliability.</p>
 
       <div class="grid md:grid-cols-2 gap-8">
+        <!-- Tool-Call Verifier Project Card -->
+        <div class="project-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
+
+          <div class="relative h-56 rounded-2xl overflow-hidden mb-6 border border-zinc-700 bg-gradient-to-br from-zinc-800 to-zinc-950 flex flex-col items-center justify-center gap-4 font-mono text-xs sm:text-sm px-3">
+            <div class="flex items-center gap-2 sm:gap-3 text-zinc-400">
+              <span class="px-2 sm:px-3 py-2 border border-zinc-600 rounded-lg whitespace-nowrap">LLM agent</span>
+              <i class="fa-solid fa-arrow-right text-zinc-600"></i>
+              <span class="px-2 sm:px-3 py-2 border border-yellow-500 text-yellow-400 rounded-lg">verifier</span>
+              <i class="fa-solid fa-arrow-right text-zinc-600"></i>
+              <span class="px-2 sm:px-3 py-2 border border-zinc-600 rounded-lg">tools</span>
+            </div>
+            <p class="text-zinc-500 text-xs text-center">scores every tool call before it runs</p>
+          </div>
+
+          <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
+            <h3 class="text-2xl font-semibold">Tool-Call Verifier</h3>
+            <span class="px-4 py-1 bg-amber-900 text-amber-300 text-xs rounded-full whitespace-nowrap">ML · Agent Reliability</span>
+          </div>
+
+          <p class="text-zinc-400 mb-6">A ~150M ModernBERT classifier that sits between an LLM agent and its tools and flags likely-wrong tool calls before they execute: wrong arguments, stale values, ignored errors and policy violations (7-class taxonomy). Trained on real τ²-bench failures that I mined and hand-verified, plus induced errors. On a 363-row human-verified test set it scores 0.771 AUROC, matching a GPT-5-mini judge (0.719) at ~0.7 s on a laptop CPU with zero API cost. A 1.5B Qwen LoRA only tied it, which showed that labeled data, not model size, was the bottleneck.</p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">PyTorch</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Transformers</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">ModernBERT</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">LoRA</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">τ²-bench</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Hugging Face</span>
+            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Python</span>
+          </div>
+
+          <div class="flex gap-3 mt-auto">
+            <a href="https://github.com/Shalini-Srivastavaaa/toolcall-verifier" target="_blank" rel="noopener"
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://huggingface.co/ShaliniSrivastava/toolcall-verifier-modernbert-v3b" target="_blank" rel="noopener"
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cube"></i> Model
+            </a>
+            <a href="https://huggingface.co/datasets/ShaliniSrivastava/toolcall-verifier-test-set" target="_blank" rel="noopener"
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-database"></i> Dataset
+            </a>
+          </div>
+        </div>
+
+
         <!-- ClosingForce Project Card -->
-        <div class="project-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+        <div class="project-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8 flex flex-col">
 
           <div class="relative h-56 rounded-2xl overflow-hidden mb-6 border border-zinc-700 bg-zinc-800">
             <img src="https://raw.githubusercontent.com/Shalini-Srivastavaaa/Shalini-Srivastavaaa.github.io/main/Closeforce/Closeforce-2.png"
@@ -242,62 +290,22 @@
             <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Python</span>
           </div>
 
-          <div class="flex flex-col gap-3">
+          <div class="flex gap-3 mt-auto">
             <button onclick="openGalleryModal()"
-                    class="w-full py-4 bg-white text-zinc-950 font-medium rounded-2xl hover:bg-zinc-200 transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-images"></i>
-              Show Full Images
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-images"></i> Show Full Images
             </button>
-
-            <div class="flex gap-3">
-              <a href="https://github.com/Shalini-Srivastavaaa/ClosingForce" target="_blank" rel="noopener"
-                 class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <!-- Loom demo: remove the comment markers and paste your video link when it's ready
-              <a href="PASTE-LOOM-LINK-HERE" target="_blank" rel="noopener"
-                 class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
-                <i class="fa-solid fa-play"></i> Demo
-              </a>
-              -->
-            </div>
+            <a href="https://github.com/Shalini-Srivastavaaa/ClosingForce" target="_blank" rel="noopener"
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <!-- Loom demo: remove the comment markers and paste your video link when it's ready
+            <a href="PASTE-LOOM-LINK-HERE" target="_blank" rel="noopener"
+               class="flex-1 text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-play"></i> Demo
+            </a>
+            -->
           </div>
-        </div>
-
-        <!-- Tool-Call Verifier Project Card -->
-        <div class="project-card bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-
-          <div class="relative h-56 rounded-2xl overflow-hidden mb-6 border border-zinc-700 bg-gradient-to-br from-zinc-800 to-zinc-950 flex flex-col items-center justify-center gap-4 font-mono text-xs sm:text-sm px-3">
-            <div class="flex items-center gap-2 sm:gap-3 text-zinc-400">
-              <span class="px-2 sm:px-3 py-2 border border-zinc-600 rounded-lg whitespace-nowrap">LLM agent</span>
-              <i class="fa-solid fa-arrow-right text-zinc-600"></i>
-              <span class="px-2 sm:px-3 py-2 border border-yellow-500 text-yellow-400 rounded-lg">verifier</span>
-              <i class="fa-solid fa-arrow-right text-zinc-600"></i>
-              <span class="px-2 sm:px-3 py-2 border border-zinc-600 rounded-lg">tools</span>
-            </div>
-            <p class="text-zinc-500 text-xs text-center">scores every tool call before it runs</p>
-          </div>
-
-          <div class="flex flex-wrap justify-between items-start gap-3 mb-4">
-            <h3 class="text-2xl font-semibold">Tool-Call Verifier</h3>
-            <span class="px-4 py-1 bg-amber-900 text-amber-300 text-xs rounded-full whitespace-nowrap">ML · Agent Reliability</span>
-          </div>
-
-          <p class="text-zinc-400 mb-6">A small transformer I trained to sit between an LLM agent and its tools. It reads the conversation and scores each tool call before it runs, so a wrong tool, a bad argument or a broken constraint can be stopped before it causes a failure. Its 8-class failure taxonomy was built from real τ²-bench failures, and it's benchmarked against a Gemini LLM judge on a frozen 116-example set.</p>
-
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">PyTorch</span>
-            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Transformers</span>
-            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">τ²-bench</span>
-            <span class="text-xs px-3 py-1 bg-zinc-800 rounded-full">Python</span>
-          </div>
-
-          <!-- GitHub button: remove the comment markers once the repo is public (check the repo name matches)
-          <a href="https://github.com/Shalini-Srivastavaaa/toolcall-verifier" target="_blank" rel="noopener"
-             class="w-full text-center py-4 border border-zinc-700 hover:border-white rounded-2xl transition flex items-center justify-center gap-2">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-          -->
         </div>
 
         <!-- To add a project: duplicate one of the cards above -->
@@ -373,6 +381,10 @@
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LangSmith</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">promptfoo</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Ragas</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">AUROC</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Bootstrap confidence intervals</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Error taxonomies &amp; human labeling</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Shortcut/leakage analysis</span>
           </div>
         </div>
 
@@ -384,6 +396,9 @@
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">TensorFlow</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Transformers</span>
             <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">CNNs</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">ModernBERT / encoder fine-tuning</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">LoRA (PEFT)</span>
+            <span class="px-3 py-1.5 bg-zinc-800 text-sm rounded-xl">Hugging Face Hub</span>
           </div>
         </div>
 
