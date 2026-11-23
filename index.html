@@ -27,6 +27,8 @@
     .no-scrollbar { scrollbar-width: none; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .project-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    #projects .project-card { min-width: 0; } /* lets the cards shrink to the screen on phones */
+    @media (max-width: 420px) { #projects .project-card .font-mono { font-size: 0.7rem; } #projects .project-card .font-mono span { padding-left: 0.4rem; padding-right: 0.4rem; } }
     .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
   </style>
 </head>
